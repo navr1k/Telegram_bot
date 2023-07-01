@@ -1,11 +1,14 @@
 import telebot
+import sys
 from telebot import types
 from openpyxl import load_workbook
 
 wd_form = load_workbook(filename='остатки.xlsx', data_only=True)
 sheet_form = wd_form['Лист1']
 
-bot = telebot.TeleBot('6282442884:AAGB3mWmaes2DX73BWF2a6y7CnWRUqGMCwQ')
+token = sys.argv[1]
+
+bot = telebot.TeleBot(token)
 article = None
 row = None
 id_customer = None
